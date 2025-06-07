@@ -1,0 +1,50 @@
+# Auto-generated files
+.next/
+out/
+dist/
+build/
+
+# Node modules
+node_modules/
+
+# Third-party libraries
+public/lib/
+public/models/
+
+# Generated types
+next-env.d.ts
+.next.d.ts
+
+# Build artifacts
+*.tsbuildinfo
+
+# Environment files
+.env*
+
+# Firebase
+.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+
+# Functions
+functions/lib/
+
+# Coverage
+coverage/
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

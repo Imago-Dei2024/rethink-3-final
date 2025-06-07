@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="450" height="120" viewBox="0 0 450 120">
+  <g fill="#000">
+    <!-- RETHINK text -->
+    <path d="M20 20v50h10V45h8c10 0 15-5 15-12s-5-13-15-13H20zm10 8h8c4 0 5 3 5 5s-1 5-5 5h-8V28z"/>
+    <path d="M65 20h40v8H75v8h25v8H75v10h30v8H65V20z"/>
+    <path d="M115 20v50h10V45h15v25h10V20h-10v17h-15V20h-10z"/>
+    <path d="M160 20v50h10V20h-10z"/>
+    <path d="M180 20v50h10V38l18 32h10V20h-10v32l-18-32h-10z"/>
+    <path d="M230 20v50h25v-8h-15V20h-10z"/>
+  </g>
+  
+  <!-- Shield with sword and brain -->
+  <g transform="translate(330, 45) scale(0.4)">
+    <!-- Brain -->
+    <ellipse cx="0" cy="-90" rx="25" ry="20" fill="#fff" stroke="#000" stroke-width="2"/>
+    
+    <!-- Shield -->
+    <path d="M-35 -70L35 -70C35 10 35 50 0 85L-35 85C-70 50 -70 10 -70 -70Z" fill="none" stroke="#000" stroke-width="5"/>
+    
+    <!-- Colored stripes in shield -->
+    <line x1="-55" y1="-65" x2="-55" y2="75" stroke="#ffcc00" stroke-width="8"/>
+    <line x1="-45" y1="-65" x2="-45" y2="75" stroke="#000" stroke-width="8"/>
+    <line x1="-35" y1="-65" x2="-35" y2="75" stroke="#0066cc" stroke-width="8"/>
+    <line x1="-25" y1="-65" x2="-25" y2="75" stroke="#ff0000" stroke-width="8"/>
+    <line x1="-15" y1="-65" x2="-15" y2="75" stroke="#ccc" stroke-width="8"/>
+    <line x1="-5" y1="-65" x2="-5" y2="75" stroke="#00cc33" stroke-width="8"/>
+    <line x1="5" y1="-65" x2="5" y2="75" stroke="#ffcc00" stroke-width="8"/>
+    <line x1="15" y1="-65" x2="15" y2="75" stroke="#000" stroke-width="8"/>
+    
+    <!-- Sword across shield -->
+    <line x1="-100" y1="0" x2="100" y2="0" stroke="#000" stroke-width="8"/>
+    <path d="M-100 0L-110 -5L-120 0L-110 5Z" fill="#000"/>
+  </g>
+  
+  <!-- mental health and wellness text -->
+  <text x="225" y="105" font-family="cursive, serif" font-size="14" font-style="italic" text-anchor="middle" fill="#000">mental health and wellness</text>
+</svg> 
