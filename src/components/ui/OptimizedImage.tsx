@@ -16,6 +16,8 @@ interface OptimizedImageProps extends Omit<ImageProps, 'onLoad' | 'loading' | 'b
   adaptiveSize?: boolean;
   disableOnLowEnd?: boolean;
   fallbackSrc?: string;
+  fill?: boolean; // Add fill prop
+  sizes?: string; // Add sizes prop for when fill is true
 }
 
 /**
@@ -48,6 +50,8 @@ export function OptimizedImage({
   adaptiveSize = true,
   disableOnLowEnd = false,
   fallbackSrc,
+  fill, // Destructure fill prop
+  sizes, // Destructure sizes prop
   ...props
 }: OptimizedImageProps) {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -194,20 +198,21 @@ export function OptimizedImage({
   return (
     <div 
       ref={setRefs} 
-      className={`relative overflow-hidden ${className}`}
+      className={`relative overflow-hidden ${fill ? '' : className}`}
       data-lcp={criticalForLCP ? 'true' : undefined}
     >
       {shouldLoad && (
         <Image
           src={finalSrc}
           alt={alt}
-          width={adaptiveWidth}
-          height={adaptiveHeight}
+          {...(fill ? 
+            { fill: true, sizes: sizes } : 
+            { width: adaptiveWidth, height: adaptiveHeight })}
           quality={adaptiveQuality}
           loading={nativeLazy}
           placeholder={placeholder}
           blurDataURL={blurDataURL}
-          className={`${fadeClassName} ${transitionClassName} ${hasError ? 'image-error' : ''}`}
+          className={`${fadeClassName} ${transitionClassName} ${hasError ? 'image-error' : ''} ${fill ? className : ''}`}
           onLoad={() => setIsLoaded(true)}
           onError={handleError}
           {...props}

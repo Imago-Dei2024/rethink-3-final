@@ -60,9 +60,9 @@ const ImageGallery = React.forwardRef<HTMLDivElement, ImageGalleryProps>(
           <CarouselContent>
             {images.map((image, index) => (
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3"> {/* Adjust basis for responsiveness */}
-                <div className="p-1">
-                   {/* Using optimized image component for better performance */}
-                   <div className="aspect-video relative overflow-hidden rounded-lg shadow-md">
+                <div className="p-1 w-full"> {/* Ensure this container takes full height - Removed h-full */}
+                  {/* Using optimized image component for better performance */}
+                  <div className="aspect-video relative overflow-hidden rounded-lg shadow-md w-full"> {/* This div provides dimensions for the image via aspect-video and w-full - Removed h-full */}
                     <OptimizedImage
                       src={image.src}
                       alt={image.alt}
@@ -73,7 +73,7 @@ const ImageGallery = React.forwardRef<HTMLDivElement, ImageGalleryProps>(
                       fadeIn={true}
                       lazyBoundary="300px" // Load slightly before coming into view
                     />
-                   </div>
+                  </div>
                 </div>
               </CarouselItem>
             ))}

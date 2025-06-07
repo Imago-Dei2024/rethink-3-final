@@ -14,6 +14,7 @@ import * as framerMotion from 'framer-motion';
 const { motion } = framerMotion;
 import { WideSection } from '@/components/layout/WideSection';
 
+
 export default function Home() {
   // Office images for gallery
   const officeImages = [
@@ -21,7 +22,7 @@ export default function Home() {
       src: '/images/office/office-1.jpg',
       alt: 'ReThink office',
       width: 800,
-      height: 600
+      height: 600 
     },
     {
       src: '/images/office/office-2.jpg',
@@ -158,9 +159,9 @@ export default function Home() {
                 <Image
                   src="/images/office/Entry-logo.jpg"
                   alt="ReThink facility"
-                  layout="fill"
-                  objectFit="cover"
-                  className="opacity-90 transition-all duration-700 hover:scale-105"
+                  fill
+                  sizes="(max-width: 1023px) 100vw, 50vw"
+                  className="opacity-90 transition-all duration-700 hover:scale-105 object-cover"
                 />
                 
                 {/* Overlay element */}
@@ -286,47 +287,36 @@ export default function Home() {
             </motion.div>
           </div>
           
-          <div className="flex flex-col md:flex-row gap-12 items-center">
-            <div className="w-full md:w-2/5">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8 }}
-                className="rounded-3xl overflow-hidden shadow-lg"
-              >
-                <ImageGallery 
-                  images={[
-                    {
-                      src: '/images/About-Us/mission.jpg',
-                      alt: 'Our mission',
-                      width: 500,
-                      height: 400
-                    },
-                    {
-                      src: '/images/About-Us/wellness-approach.jpg',
-                      alt: 'Wellness approach',
-                      width: 500,
-                      height: 400
-                    },
-                    {
-                      src: '/images/About-Us/therapy-session.jpg',
-                      alt: 'Therapy session',
-                      width: 500,
-                      height: 400
-                    }
-                  ]}
-                />
-              </motion.div>
-            </div>
-            
-            <div className="w-full md:w-3/5 mt-6 md:mt-0 text-neutral-700">
+          {/* New Grid Layout for Videos and Text/Stats */}
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
+
+            {/* Item 1: Video 1 (students.mp4) */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.8 }}
+              className="rounded-3xl overflow-hidden shadow-lg aspect-[5/4]" 
+            >
+              <video 
+                src="/videos/students.mp4" 
+                autoPlay 
+                loop 
+                muted 
+                playsInline 
+                className="w-full h-full object-cover" 
+                aria-label="Students in a classroom setting"
+              />
+            </motion.div>
+
+            {/* Item 2: Text and Stats Block */}
+            <div className="w-full text-neutral-700">
               <div className="space-y-6">
                 <motion.div
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
                   className="glass-panel p-8 rounded-2xl"
                 >
                   <p className="text-lg leading-relaxed">
@@ -341,7 +331,6 @@ export default function Home() {
                   </p>
                 </motion.div>
                 
-                {/* Enhanced stats with DaisyUI cards */}
                 <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
                   {[
                     { value: '100+', label: 'Clients Helped Monthly', icon: 'users', delay: 0 },
@@ -353,7 +342,7 @@ export default function Home() {
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: stat.delay + 0.3 }}
+                      transition={{ duration: 0.5, delay: stat.delay + 0.35 }}
                       whileHover={{ y: -5, transition: { duration: 0.2 } }}
                       className="card bg-white rounded-xl shadow-soft hover:shadow-md transition-all duration-300 border border-neutral-100 overflow-hidden"
                     >
@@ -377,6 +366,45 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
+            {/* Item 3: Video 2 (joyful-hugging.mp4) */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.8, delay: 0.15 }} 
+              className="rounded-3xl overflow-hidden shadow-lg aspect-[5/4]" 
+            >
+              <video 
+                src="/videos/joyful-hugging.mp4" 
+                autoPlay 
+                loop 
+                muted 
+                playsInline 
+                className="w-full h-full object-cover" 
+                aria-label="Two people joyfully hugging"
+              />
+            </motion.div>
+
+            {/* Item 4: Video 3 (old-couple.mp4) */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.8, delay: 0.25 }} 
+              className="rounded-3xl overflow-hidden shadow-lg aspect-[5/4]" 
+            >
+              <video 
+                src="/videos/old-couple.mp4" 
+                autoPlay 
+                loop 
+                muted 
+                playsInline 
+                className="w-full h-full object-cover" 
+                aria-label="Old couple sitting together in a park"
+              />
+            </motion.div>
+            
           </div>
         </div>
       </WideSection>
