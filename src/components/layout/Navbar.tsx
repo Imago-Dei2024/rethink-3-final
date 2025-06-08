@@ -14,7 +14,8 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button"; 
+import Image from "next/image"; 
 
 const navItems = [
   {
@@ -144,12 +145,15 @@ export default function Navbar() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
         <div className="flex justify-between h-16 md:h-20">
           <div className="flex items-center">
-            <Link href="/" className="flex items-center group">
-              <div className="mr-3 h-8 w-8 rounded-md bg-primary-600 dark:bg-primary-500 flex items-center justify-center text-white font-bold group-hover:bg-primary-700 dark:group-hover:bg-primary-600 transition-colors duration-200">R</div>
-              <div className="flex flex-col">
-                <span className="text-neutral-900 dark:text-white font-bold text-lg leading-tight">ReThink</span>
-                <span className="text-neutral-500 dark:text-neutral-400 text-xs leading-tight">Mental Health & Wellness</span>
-              </div>
+            <Link href="/" className="flex items-center group"> {/* This is the "ReThink Mental Health and Wellness" logo area on the far left of the nav bar*/}
+              <Image
+                src="/logo/ReThink-Logo.svg"
+                alt="ReThink Mental Health and Wellness"
+                width={200}
+                height={100}
+                className="h-16 w-auto object-contain"
+                priority // Add priority as it's likely LCP
+                />
             </Link>
             <DesktopNav />
           </div>
@@ -190,11 +194,15 @@ export default function Navbar() {
                 <div className="py-6 px-4 space-y-4">
                   {/* Logo in mobile menu - Modern */}
                   <div className="flex items-center mb-8">
-                    <div className="mr-3 h-8 w-8 rounded-md bg-primary-600 dark:bg-primary-500 flex items-center justify-center text-white font-bold">R</div>
-                    <div className="flex flex-col">
-                      <span className="text-neutral-900 dark:text-white font-bold text-lg leading-tight">ReThink</span>
-                      <span className="text-neutral-500 dark:text-neutral-400 text-xs leading-tight">Mental Health & Wellness</span>
-                    </div>
+                    <Link href="/" className="flex items-center">
+                      <Image
+                        src="/images/logo/ReThink-Logo.svg"
+                        alt="ReThink Mental Health and Wellness"
+                        width={135}
+                        height={36}
+                        className="h-9 w-auto object-contain"
+                      />
+                    </Link>
                   </div>
                   {navItems.map((item) => (
                     <div key={item.name} className="py-1">
@@ -251,7 +259,7 @@ export default function Navbar() {
                       className="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-md bg-primary-600 hover:bg-primary-700 text-white font-medium transition-colors duration-200 text-base"
                     >
                       <span>Book Appointment</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-5 w-5">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" className="h-5 w-5">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                       </svg>
                     </Link>
@@ -276,4 +284,4 @@ export default function Navbar() {
       </div>
     </nav>
   );
-} 
+}
