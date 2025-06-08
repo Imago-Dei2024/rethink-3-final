@@ -24,7 +24,8 @@ const navItems = [
   {
     name: "About Us",
     path: "/about",
-    subNav: [
+    subNav: [ 
+      { name: "Our Mission", path: "/about#hero-mission"}, 
       { name: "Our Team", path: "/about#team" },
       { name: "Office Gallery", path: "/about#office-gallery" }
     ]

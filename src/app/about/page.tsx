@@ -45,7 +45,7 @@ export default function About() {
   return (
     <div>
       {/* Hero Section - Modern Design with Purple-Teal Gradient */}
-      <section className="relative text-white overflow-hidden py-20 md:py-24">
+      <section id="hero-about" className="relative text-white overflow-hidden py-20 md:py-24">
         {/* Background with gradient */}
         <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-purple-900 via-indigo-800 to-teal-700">
           {/* Modern geometric pattern overlay */}
