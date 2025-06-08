@@ -166,33 +166,32 @@ export default function FirstResponderProgram() {
           <div className="mt-10 max-w-4xl mx-auto">
             <div className="bg-white overflow-hidden shadow rounded-lg">
               <div className="lg:flex">
-                <div className="lg:w-1/3 bg-gray-200 lg:h-auto h-64 flex items-center justify-center">
-                  <Image src="/images/team/Erin-Webb.jpg" 
-                  alt="Erin Webb" 
-                  width={1000} 
-                  height={1000} />
-                  <div className="text-gray-400 text-center">
-                    <p className="text-sm">Team member photo placeholder</p>
-                    <p className="text-xs mt-2">(Replace with photo of Erin Webb)</p>
-                  </div>
+                <div className="lg:w-1/3 relative">
+                  <Image 
+                    src="/images/team/Karen-Laber.jpg" 
+                    alt="Karen Laber" 
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <div className="p-8 lg:w-2/3">
-                  <h3 className="text-2xl font-semibold text-gray-900">Erin Webb</h3>
-                  <p className="text-sm text-blue-600 font-medium mb-4">Psychiatric Nurse Practitioner</p>
+                  <h3 className="text-2xl font-semibold text-gray-900">Karen Laber</h3>
+                  <p className="text-sm text-blue-600 font-medium mb-4">PMHNP-BC, Founder, Former First Responder</p>
                   <div className="text-gray-600">
                     <p className="mb-4">
-                      Erin Webb brings extensive experience working with first responders and military veterans. 
-                      His approach combines evidence-based psychiatric treatments with holistic methods tailored 
-                      to the unique needs of those in high-stress professions.
+                       As a Psychiatric Mental Health Nurse Practitioner with over 25 years of experience in ER, ICU, and flight nursing, 
+                       Karen Laber is uniquely positioned to help first responders. Understanding the lifestyle firsthand and as a police 
+                       officer&apos;s wife, she founded ReThink to provide culturally competent care. Karen uses an individualized, holistic approach 
+                       that combines evidence-based psychiatric treatment with therapies for overall wellness, tailored to those in high-stress professions.
                     </p>
                     <p className="mb-4">
-                      With specialized training in trauma-informed care and PTSD treatment approaches, including 
-                      ketamine therapy, Erin understands the complex mental health challenges faced by first responders 
-                      and is dedicated to providing compassionate, effective care in a safe, confidential environment.
+                      Karen actively teaches peer support, secondary trauma, and resiliency courses for various police, fire, and EMS agencies. 
+                      Her approach is holistic, believing that comprehensive care for the entire body is essential to mental wellness. 
+                      She is dedicated to fostering a safe, confidential environment where responders can find understanding and effective treatment.
                     </p>
                     <p>
-                      His background working with emergency services personnel gives him unique insight into the 
-                      pressures and experiences of your profession, allowing for more targeted and effective treatment.
+                      Her extensive background as an EMT, ER, and flight nurse, combined with her life as a police officer&apos;s wife, gives her unique insight 
+                      into the pressures of the profession, allowing for a more targeted and compassionate treatment approach.
                     </p>
                   </div>
                 </div>

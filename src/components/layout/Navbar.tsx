@@ -43,6 +43,10 @@ const navItems = [
       { name: "QbTesting ADHD", path: "/services/qb-testing" },
       { name: "Nutrition Counseling", path: "/services/nutrition" },
     ]
+  }, 
+  { 
+    name: "First Responders", 
+    path: "/services/first-responder"
   },
   {
     name: "Wellness",
@@ -63,7 +67,7 @@ const navItems = [
   {
     name: "Contact",
     path: "/contact",
-  },
+  }, 
 ];
 
 export default function Navbar() {
