@@ -196,9 +196,9 @@ export function OptimizedImage({
   }
   
   return (
-    <div 
-      ref={setRefs} 
-      className={`relative overflow-hidden ${fill ? '' : className}`}
+    <div
+      ref={setRefs}
+      className={`relative overflow-hidden ${fill ? 'w-full h-full' : className}`}
       data-lcp={criticalForLCP ? 'true' : undefined}
     >
       {shouldLoad && (
