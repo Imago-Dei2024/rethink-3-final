@@ -6,7 +6,6 @@ import { TreatmentComparison } from '@/components/TreatmentComparison'; // from 
 import { ResourceHub } from '@/components/ResourceHub'; // from @/components/ResourceHub
 import { MentalHealthFAQ } from '@/components/MentalHealthFAQ'; // from @/components/MentalHealthFAQ
 import { RecoveryJourney } from '@/components/RecoveryJourney'; // from @/components/RecoveryJourney
-import Image from 'next/image'; // Next.js Image component
 import ImageGallery from '@/components/ui/ImageGallery'; // from @/components/ui/ImageGallery
 import * as framerMotion from 'framer-motion'; // Animation library
 
@@ -41,36 +40,22 @@ export default function Home() {
   return (
     <div className="min-h-screen"> {/* START main container */}
       {/* Hero Section - Inspired by Rivian's clean modern design */}
-      <section className="relative text-white min-h-[90vh] flex items-center overflow-hidden"> {/* START Hero Section */}
+      <section className="relative text-white min-h-[80vh] flex items-center overflow-hidden"> {/* START Hero Section */} {/* This is where you'd adjust the height of the main hero section */}
         {/* Background with subtle gradient */}
-        <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-primary-900 to-secondary-900"> {/* START background gradient */}
-          {/* Modern geometric pattern overlay */}
-          <div className="absolute inset-0 opacity-5"> {/* START geometric pattern */}
-            <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-              <pattern id="grid-pattern" width="10" height="10" patternUnits="userSpaceOnUse">
-                <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" strokeWidth="0.5"/>
-              </pattern>
-              <rect x="0" y="0" width="100%" height="100%" fill="url(#grid-pattern)" />
-            </svg>
-          </div> {/* END geometric pattern */}
-          
-          {/* Subtle animated light effect - inspired by Rivian */}
-          <motion.div 
-            className="absolute inset-0 opacity-20"
-            animate={{
-              background: [
-                "radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.3) 0%, transparent 60%)",
-                "radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.3) 0%, transparent 60%)"
-              ]
-            }}
-            transition={{ duration: 15, repeat: Infinity, repeatType: "reverse" }}
-          /> {/* END animated light effect - framer-motion */}
-          
-          {/* Clean diagonal line elements */}
-          <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-tr from-white/5 to-transparent"></div> {/* diagonal accent bottom */}
-          <div className="absolute top-0 right-0 w-full h-40 bg-gradient-to-bl from-white/5 to-transparent"></div> {/* diagonal accent top */}
-        </div> {/* END background gradient */}
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="absolute top-0 left-0 w-full h-full object-cover z-0" 
+          >
+            <source src="/videos/Hero-Intro.mp4" type="video/mp4" /> 
+            Your Browser does not support this video tag.  
+          </video>
         
+
+        
+
         <div className="relative w-full max-w-[1400px] mx-auto px-6 lg:px-8 py-16 md:py-24 lg:py-32 flex flex-col lg:flex-row items-center gap-12 lg:gap-8"> {/* START hero content container */}
           {/* Left side - Text content */}
           <motion.div
@@ -81,7 +66,7 @@ export default function Home() {
           > {/* START left side text content - framer-motion */}
             <div className="flex items-center gap-2 mb-6"> {/* START top badge */}
               <div className="h-px w-10 bg-primary-400"></div>
-              <p className="text-primary-300 font-medium tracking-wider text-sm uppercase">Mental Health & Wellness</p>
+              <p className="text-white/95 font-medium tracking-wider text-sm uppercase">Mental Health & Wellness</p>
             </div> {/* END top badge */}
             
             <motion.h1 
@@ -90,8 +75,8 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6"
             > {/* START main heading - framer-motion */}
-              <span className="block text-white">Welcome to</span>
-              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-primary-200 to-white">
+              <span className="block text-white/90">Welcome to</span>
+              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-primary-200 to-white/90">
                 ReThink Mental Health
               </span>
             </motion.h1> {/* END main heading */}
@@ -100,7 +85,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl text-white/80 max-w-xl mb-10 font-light leading-relaxed"
+              className="text-xl text-white/90 max-w-xl mb-10 font-light leading-relaxed"
             > {/* START description paragraph - framer-motion */}
               Expert psychiatry and medication management with integrative approaches. Our doors are open to everyone.
             </motion.p> {/* END description paragraph */}
@@ -113,7 +98,7 @@ export default function Home() {
             > {/* START CTA buttons container - framer-motion */}
               <Link href="/appointment" passHref> {/* START appointment button link - Next.js Link */}
                 <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}> {/* motion wrapper */}
-                  <button className="px-8 py-4 rounded-md bg-white hover:bg-white/90 text-primary-900 font-medium transition-all duration-300 flex items-center gap-2 text-lg">
+                  <button className="px-8 py-4 rounded-md bg-white hover:bg-blue-300 text-primary-900 font-medium transition-all duration-300 flex items-center gap-2 text-lg">
                     Book Appointment
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="ml-1">
                       <path d="M5 12h14"></path>
@@ -146,57 +131,6 @@ export default function Home() {
             </motion.div> {/* END feature badges */}
           </motion.div> {/* END left side text content */}
           
-          {/* Right side - Hero image with stats card */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.3 }}
-            className="lg:w-1/2 relative z-10 flex justify-center lg:justify-end"
-          > {/* START right side hero image - framer-motion */}
-            <div className="relative w-full max-w-md overflow-hidden rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 p-1"> {/* START image card container */}
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-500/30 to-secondary-500/30 rounded-2xl blur opacity-30"></div> {/* glow effect */}
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-primary-950/40"> {/* image wrapper */}
-                <Image
-                  src="/images/office/Entry-logo.jpg"
-                  alt="ReThink facility"
-                  fill
-                  sizes="(max-width: 1023px) 100vw, 50vw"
-                  className="opacity-90 transition-all duration-700 hover:scale-105 object-cover"
-                /> {/* Next.js Image component */}
-                
-                {/* Overlay element */}
-                {/* Overlay element */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-primary-900/80 to-transparent mix-blend-multiply"></div> {/* image overlay */}
-                
-                {/* Floating stats card - inspired by Shopify examples */}
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 1.2 }}
-                  className="absolute bottom-4 left-4 right-4 p-4 bg-white/90 backdrop-blur-md rounded-lg shadow-lg"
-                > {/* START floating stats card - framer-motion */}
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-xs font-medium text-primary-700">Patient satisfaction</p>
-                      <p className="text-2xl font-bold text-primary-900">96%</p>
-                    </div>
-                    <div className="w-20 h-10"> {/* START mini chart */}
-                      {/* Simplified chart mockup */}
-                      <div className="h-full w-full flex items-end space-x-1">
-                        {[40, 65, 45, 80, 60, 75, 90].map((h, i) => (
-                          <div key={i} className="h-full flex-1">
-                            <div className="h-full flex flex-col justify-end">
-                              <div className={`bg-primary-500 rounded-sm`} style={{height: `${h}%`}}></div>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div> {/* END mini chart */}
-                  </div>
-                </motion.div> {/* END floating stats card */}
-              </div>
-            </div> {/* END image card container */}
-          </motion.div> {/* END right side hero image */}
         </div> {/* END hero content container */}
         
         {/* Modern scroll indicator */}
