@@ -12,7 +12,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button"; 
 import Image from "next/image"; 
@@ -94,8 +94,8 @@ export default function Navbar() {
                     {item.name}
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className="animate-fade-in">
-                    <ul className="grid w-[400px] gap-3 p-6 bg-white dark:bg-neutral-900 backdrop-blur-md rounded-xl shadow-lg border border-neutral-200 dark:border-neutral-800">
-                      <li className="mb-2 pb-2 border-b border-neutral-200 dark:border-neutral-800">
+                    <ul className="grid w-[400px] gap-3 p-6 bg-white dark:bg-neutral-900 backdrop-blur-md rounded-xl shadow-lg">
+                      <li className="mb-2 pb-2">
                         <h4 className="text-sm font-semibold text-primary-600 dark:text-primary-400">{item.name}</h4>
                       </li>
                       {item.subNav.map((subItem) => (
@@ -148,7 +148,7 @@ export default function Navbar() {
             <Link href="/" className="flex items-center group"> {/* This is the "ReThink Mental Health and Wellness" logo area on the far left of the nav bar*/}
               <Image
                 src="/logo/ReThink-Logo.svg"
-                alt="ReThink Mental Health and Wellness"
+                alt="ReThink-Logo.svg"
                 width={200}
                 height={100}
                 className="h-16 w-auto object-contain"
@@ -190,13 +190,18 @@ export default function Navbar() {
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[350px] bg-white/98 dark:bg-neutral-900/98 backdrop-blur-md border-l border-neutral-200 dark:border-neutral-800">
+              <SheetContent side="right" className="w-[300px] sm:w-[350px] bg-white dark:bg-neutral-950 border-l border-neutral-200 dark:border-neutral-800">
+                <SheetHeader>
+                  <SheetTitle>
+                    <span className="sr-only">Mobile Navigation Menu</span>
+                  </SheetTitle>
+                </SheetHeader>
                 <div className="py-6 px-4 space-y-4">
                   {/* Logo in mobile menu - Modern */}
                   <div className="flex items-center mb-8">
                     <Link href="/" className="flex items-center">
                       <Image
-                        src="/images/logo/ReThink-Logo.svg"
+                        src="/logo/ReThink-Logo.svg"
                         alt="ReThink Mental Health and Wellness"
                         width={135}
                         height={36}

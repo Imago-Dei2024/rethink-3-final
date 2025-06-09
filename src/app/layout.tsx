@@ -78,9 +78,7 @@ export default function RootLayout({
         >
           <div className="min-h-screen flex flex-col relative overflow-x-hidden">
             {/* Background decoration - subtle patterns */}
-            <div className="fixed inset-0 -z-10 bg-white dark:bg-neutral-950 opacity-80">
-              <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#1f2937_1px,transparent_1px)] [background-size:20px_20px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
-            </div>
+            
             
             <Navbar />
             <main className="flex-grow relative">
