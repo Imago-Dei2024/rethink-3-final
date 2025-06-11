@@ -72,57 +72,61 @@ const StarRating = ({ rating }: { rating: number }) => {
 
 export default function Reviews() {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-            Patient Reviews
-          </h1>
-          <p className="mt-4 text-lg text-gray-500">
-            Read what our patients say about their experiences at ReThink Mental Health.
-          </p>
-          <div className="mt-8">
-            <Link
-              href="/leave-review"
-              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-            >
-              Leave Your Review
-            </Link>
-          </div>
-        </div>
-
-        <div className="grid gap-8 md:grid-cols-2">
-          {reviews.map((review) => (
-            <div key={review.id} className="bg-white rounded-lg shadow-md p-6 flex flex-col">
-              <div className="flex justify-between items-start mb-4">
-                <div>
-                  <h3 className="text-lg font-medium text-gray-900">{review.name}</h3>
-                  <p className="text-sm text-gray-500">{review.date}</p>
-                </div>
-                <div className="text-sm text-blue-600 font-medium">{review.service}</div>
-              </div>
-              
-              <StarRating rating={review.rating} />
-              
-              <div className="mt-4 flex-grow">
-                <p className="text-gray-600">{review.reviewText}</p>
+    <div className="parallax-background py-12 md:py-20">  
+      <div className="glass-panel max-w-7xl mx-auto p-6 md:p-12"> 
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <h1 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                Patient Reviews
+              </h1>
+              <p className="mt-4 text-lg text-gray-500">
+                Read what our patients say about their experiences at ReThink Mental Health.
+              </p>
+              <div className="mt-8">
+                <Link
+                  href="/leave-review"
+                  className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                >
+                  Leave Your Review
+                </Link>
               </div>
             </div>
-          ))}
-        </div>
 
-        <div className="text-center mt-16">
-          <p className="text-lg text-gray-700 mb-6">
-            Ready to experience the ReThink difference for yourself?
-          </p>
-          <Link
-            href="/appointment"
-            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-          >
-            Book an Appointment
-          </Link>
-        </div>
-      </div>
-    </div>
+            <div className="grid gap-8 md:grid-cols-2">
+              {reviews.map((review) => (
+                <div key={review.id} className="bg-white rounded-lg shadow-md p-6 flex flex-col">
+                  <div className="flex justify-between items-start mb-4">
+                    <div>
+                      <h3 className="text-lg font-medium text-gray-900">{review.name}</h3>
+                      <p className="text-sm text-gray-500">{review.date}</p>
+                    </div>
+                    <div className="text-sm text-blue-600 font-medium">{review.service}</div>
+                  </div>
+                  
+                  <StarRating rating={review.rating} />
+                  
+                  <div className="mt-4 flex-grow">
+                    <p className="text-gray-600">{review.reviewText}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center mt-16">
+              <p className="text-lg text-gray-700 mb-6">
+                Ready to experience the ReThink difference for yourself?
+              </p>
+              <Link
+                href="/appointment"
+                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              >
+                Book an Appointment
+              </Link>
+            </div>
+          </div>
+        </div> 
+     </div> 
+    </div> 
   );
 } 

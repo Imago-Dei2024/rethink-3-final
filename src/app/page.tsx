@@ -461,93 +461,93 @@ export default function Home() {
       {/* END What Makes Us Different Section */} {/* END What Makes Us Different Section */}
 
       {/* Office and Facilities Image Gallery - Enhanced with Optimized Loading */}
-      <WideSection 
-        bgColor="bg-gradient-to-b from-white via-neutral-50 to-white" 
-        className="py-20"
+      <WideSection  
+        className="parallax-background py-40"
         fullWidth
         animate
         shadow
-        dividerBottom="wave"
       > {/* START Office and Facilities Image Gallery Section - from @/components/layout/WideSection */}
-        <div className="relative"> {/* section container */}
-          <div className="text-center mb-16"> {/* START section header */}
+        <div className="glass-panel max-w-screen-xl mx-auto p-10 md:p-20"> 
+          <div className="relative"> {/* section container */}
+            <div className="text-center mb-16"> {/* START section header */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+                className="space-y-4"
+              > {/* START section header - framer-motion */}
+                <span className="badge badge-primary bg-primary-100 text-primary-700 border-primary-200 font-medium py-3 px-4 rounded-lg">Our Space</span>
+                <h2 className="heading-2 text-neutral-900 mt-4">
+                  Modern <span className="text-gradient font-bold">Facilities</span>
+                </h2>
+                <div className="h-1 w-24 bg-gradient-to-r from-primary-500 to-secondary-500 mx-auto my-6 rounded-full"></div>
+                <p className="max-w-xl mx-auto text-xl text-neutral-600 font-light">
+                  Take a virtual tour of our calm, welcoming treatment spaces
+                </p>
+              </motion.div> {/* END section header - framer-motion */}
+            </div>
+            
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-              className="space-y-4"
-            > {/* START section header - framer-motion */}
-              <span className="badge badge-primary bg-primary-100 text-primary-700 border-primary-200 font-medium py-3 px-4 rounded-lg">Our Space</span>
-              <h2 className="heading-2 text-neutral-900 mt-4">
-                Modern <span className="text-gradient font-bold">Facilities</span>
-              </h2>
-              <div className="h-1 w-24 bg-gradient-to-r from-primary-500 to-secondary-500 mx-auto my-6 rounded-full"></div>
-              <p className="max-w-xl mx-auto text-xl text-neutral-600 font-light">
-                Take a virtual tour of our calm, welcoming treatment spaces
-              </p>
-            </motion.div> {/* END section header - framer-motion */}
-          </div>
-          
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="max-w-6xl mx-auto rounded-2xl overflow-hidden shadow-xl"
-          > {/* START image gallery container - framer-motion */}
-            <div className="card card-compact glass-panel border-none overflow-hidden"> {/* START gallery card */}
-              <div className="card-body p-0"> {/* card body */}
-                {/* LazyLoaded Image Gallery */}
-                <motion.div
-                  whileInView={{ opacity: 1 }}
-                  initial={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                > {/* START image gallery wrapper - framer-motion */}
-                  <ImageGallery 
-                    images={officeImages} 
-                    className="rounded-xl overflow-hidden"
-                  /> {/* ImageGallery component - from @/components/ui/ImageGallery */}
-                </motion.div> {/* END image gallery wrapper */}
-                <div className="p-6"> {/* card footer */}
-                  <motion.div 
-                    className="flex flex-wrap gap-4 justify-center"
-                    variants={{
-                      hidden: { opacity: 0 },
-                      show: {
-                        opacity: 1,
-                        transition: {
-                          staggerChildren: 0.1
+              transition={{ duration: 0.8 }}
+              className="max-w-6xl mx-auto rounded-2xl overflow-hidden shadow-xl"
+            > {/* START image gallery container - framer-motion */}
+              
+                <div className="card-body p-0"> {/* card body */}
+                  {/* LazyLoaded Image Gallery */}
+                  <motion.div
+                    whileInView={{ opacity: 1 }}
+                    initial={{ opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                  > {/* START image gallery wrapper - framer-motion */}
+                    <ImageGallery 
+                      images={officeImages} 
+                      className="rounded-xl overflow-hidden"
+                    /> {/* ImageGallery component - from @/components/ui/ImageGallery */}
+                  </motion.div> {/* END image gallery wrapper */}
+                  <div className="p-6"> {/* card footer */}
+                    <motion.div 
+                      className="flex flex-wrap gap-4 justify-center"
+                      variants={{
+                        hidden: { opacity: 0 },
+                        show: {
+                          opacity: 1,
+                          transition: {
+                            staggerChildren: 0.1
+                          }
                         }
-                      }
-                    }}
-                    initial="hidden"
-                    whileInView="show"
-                    viewport={{ once: true }}
-                  > {/* START badges container - framer-motion */}
-                    {[
-                      "Comfortable Environment",
-                      "Private Treatment Rooms",
-                      "Modern Design",
-                      "Calming Aesthetics"
-                    ].map((badge, index) => (
-                      <motion.div 
-                        key={index}
-                        className="badge badge-outline badge-lg p-3"
-                        variants={{
-                          hidden: { y: 10, opacity: 0 },
-                          show: { y: 0, opacity: 1 }
-                        }}
-                      > {/* individual facility badge - framer-motion */}
-                        {badge}
-                      </motion.div>
-                    ))}
-                  </motion.div> {/* END badges container */}
-                </div> {/* END card footer */}
-              </div>
-            </div> {/* END gallery card */}
-          </motion.div> {/* END image gallery container */}
+                      }}
+                      initial="hidden"
+                      whileInView="show"
+                      viewport={{ once: true }}
+                    > {/* START badges container - framer-motion */}
+                      {[
+                        "Comfortable Environment",
+                        "Private Treatment Rooms",
+                        "Modern Design",
+                        "Calming Aesthetics"
+                      ].map((badge, index) => (
+                        <motion.div 
+                          key={index}
+                          className="badge badge-outline badge-lg p-3"
+                          variants={{
+                            hidden: { y: 10, opacity: 0 },
+                            show: { y: 0, opacity: 1 }
+                          }}
+                        > {/* individual facility badge - framer-motion */}
+                          {badge}
+                        </motion.div>
+                      ))}
+                    </motion.div> {/* END badges container */}
+                  </div> {/* END card footer */}
+                </div>
+              
+            </motion.div> {/* END image gallery container */}
+          </div> 
         </div>
       </WideSection> {/* END Office and Facilities Image Gallery Section */}
 
